@@ -29,14 +29,16 @@
 
 ## 📸 Screenshots
 
+## 📸 Screenshots
+
 | Home & Input | Credibility Analysis | Timeline & Metrics |
 |---|---|---|
-| ![Home](Images/Screenshot%202026-09-01%20210411.png) | ![Analysis](Images/Screenshot 2026-09-01 205142.png) | ![Timeline](Images/Screenshot 2026-09-01 205148.png) |
+| ![Home](Images/home.png) | ![Analysis](Images/analysis.png) | ![Timeline](Images/timeline.png) |
 | *Dark/blue themed hero + textarea* | *Gauges: Credibility / Truth Probability* | *24h credibility evolution (Plotly, date-axis, spline)* |
 
 | Detailed Metrics | Source Comparison | AI Insights |
 |---|---|---|
-| ![Metrics](Images/Screenshot 2026-09-01 205156.png) | ![Sources](Images/Screenshot 2026-09-01 205208.png) | ![AI Insights](Images/Screenshot 2026-09-01 220811.png) |
+| ![Metrics](Images/metrics.png) | ![Sources](Images/sources.png) | ![AI Insights](Images/insights.png) |
 | *Sentiment, Bias, Fact-check, Manipulative, Source Reliability* | *Region-based 3-article generation (US/UK/EU/Asia)* | *Pattern matches, impossibilities, confidence & conclusion* |
 
 **Demo GIF:**
@@ -44,6 +46,7 @@
   <img src="docs/screenshots/demo.gif" alt="Demo GIF" width="85%" />
   <br/><em>Paste → Analyze → Gauges + Timeline + Sources in < 1s</em>
 </p>
+
 
 ---
 

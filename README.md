@@ -32,14 +32,14 @@
 | Home & Input | Credibility Analysis | Timeline & Metrics |
 |---|---|---|
 | ![Home](Images/home.png) | ![Analysis](Images/analysis.png) | ![Timeline](Images/timeline.png) |
-| *Dark/blue themed her* | *Gauges: Credibility / Truth Probability* | *24h credibility evolution (Plotly, date-axis, spline)* |
+| *Home With News Input* | *Gauges: Credibility / Truth Probability* | *24h credibility evolution (Plotly, date-axis, spline)* |
 
 | Detailed Metrics | Source Comparison | AI Insights |
 |---|---|---|
 | ![Metrics](Images/metrics.png) | ![Sources](Images/sources.png) | ![AI Insights](Images/insights.png) |
 | *Sentiment, Bias, Fact-check, Manipulative, Source Reliability* | *Region-based 3-article generation (US/UK/EU/Asia)* | *Pattern matches, impossibilities, confidence & conclusion* |
 
-**Demo GIF:**
+**Demo Working:**
 <p align="center">
   <img src="Images/demo.gif" alt="Demo GIF" width="85%" />
   <br/><em>Paste → Analyze → Gauges + Timeline + Sources in < 1s</em>
@@ -74,9 +74,7 @@
                               [ JSON ] → [ Plotly.js gauges + timeline + cards (static/js/script.js) ]
 ```
 
-<p align="center">
-  <img src="Images/architecture.png" alt="Architecture Diagram" width="90%" />
-</p>
+
 
 ---
 

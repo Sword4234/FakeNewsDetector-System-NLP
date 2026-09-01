@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gauge.js@1.3.7/dist/gauge.min.js"></script>
+    <style>
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .gauge-wrapper {
+            grid-column: span 1;
+        }
+        
+        .metrics-group {
+            grid-column: span 1;
+        }
+        
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+        
+        .card {
+            grid-column: span 1;
+        }
+        
+        .timeline-card {
+            grid-column: span 1;
+        }
+        
+        .metrics-card {
+            grid-column: span 1;
+        }
+        
+        .sources-card {
+            grid-column: span 1;
+        }
+        
+        .source-comparison-section {
+            grid-column: span 1;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+        
+        .metric-item {
+            grid-column: span 1;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle">
+        <label for="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="toggle-ball"></div>
+        </label>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>Fake News Detector</h1>
+            </div>
+            <p class="tagline">Advanced AI-powered news verification system</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-newspaper"></i> Analyze News</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="news-form">
+                            <div class="form-group">
+                                <label for="news-text">Enter news article, headline, or summary:</label>
+                                <textarea id="news-text" rows="8" placeholder="Paste or type news content here..."></textarea>
+                            </div>
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search"></i> Analyze
+                                </button>
+                                <button type="button" id="clear-button" class="btn btn-secondary">
+                                    <i class="fas fa-eraser"></i> Clear
+                                </button>
+                                <button type="button" id="sample-news-button" class="btn btn-info">
+                                    <i class="fas fa-newspaper"></i> Try Sample News
+                                </button>
+                                <button type="button" id="fake-news-sample-button" class="btn btn-danger">
+                                    <i class="fas fa-exclamation-triangle"></i> Try Fake News Sample
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section" id="results-section" style="display: none;">
+                <div class="results-container">
+                    <!-- Credibility Analysis Card -->
+                    <div class="card score-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-chart-pie"></i> Credibility Analysis</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="analysis-grid">
+                                <!-- Gauge Section -->
+                                <div class="gauge-wrapper" id="credibility-gauge-wrapper">
+                                    <div class="gauge" id="credibility-gauge"></div>
+                                    <div class="gauge-label">
+                                        <div class="gauge-value" id="credibility-value">--</div>
+                                        <div class="score-label">Credibility Score</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="gauge-wrapper" id="truth-gauge-wrapper">
+                                    <div class="gauge" id="truth-gauge"></div>
+                                    <div class="gauge-label">
+                                        <div class="gauge-value" id="truth-value">--</div>
+                                        <div class="score-label">Truth Probability</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Metrics Section -->
+                                <div class="metrics-group credibility-metrics">
+                                    <h3>Credibility Factors</h3>
+                                    <ul class="metrics-list">
+                                        <li>
+                                            <span class="metric-name">Source reputation</span>
+                                            <div class="metric-description">Evaluates the credibility of the news source based on historical accuracy</div>
+                                        </li>
+                                        <li>
+                                            <span class="metric-name">Factual accuracy</span>
+                                            <div class="metric-description">Measures how well the content aligns with verified facts</div>
+                                        </li>
+                                        <li>
+                                            <span class="metric-name">Content analysis</span>
+                                            <div class="metric-description">Examines writing style, tone, and linguistic patterns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="metrics-group truth-metrics">
+                                    <h3>Truth Assessment</h3>
+                                    <ul class="metrics-list">
+                                        <li>
+                                            <span class="metric-name">Fact verification</span>
+                                            <div class="metric-description">Cross-checks claims against reliable sources</div>
+                                        </li>
+                                        <li>
+                                            <span class="metric-name">Cross-reference analysis</span>
+                                            <div class="metric-description">Compares content with multiple trusted sources</div>
+                                        </li>
+                                        <li>
+                                            <span class="metric-name">Statistical confidence</span>
+                                            <div class="metric-description">Provides a confidence level for the truth assessment</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Credibility Timeline Card -->
+                    <div class="card timeline-card full-width">
+                        <div class="card-header">
+                            <h2><i class="fas fa-clock"></i> Credibility Timeline</h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="timeline-chart"></div>
+                        </div>
+                    </div>
+
+                    <div class="card metrics-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-analytics"></i> Detailed Metrics</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <div class="metric-label">
+                                        <i class="fas fa-heart"></i> Sentiment Score
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">Measures the emotional tone of the content from -100 (negative) to 100 (positive)</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-bar-container">
+                                        <div class="metric-bar" id="sentiment-bar"></div>
+                                        <span class="metric-value" id="sentiment-value">--</span>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">
+                                        <i class="fas fa-balance-scale"></i> Bias Score
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">Measures how biased the content is from 0 (neutral) to 100 (highly biased)</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-bar-container">
+                                        <div class="metric-bar" id="bias-bar"></div>
+                                        <span class="metric-value" id="bias-value">--</span>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">
+                                        <i class="fas fa-check-circle"></i> Fact Check Confidence
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">Confidence in the fact-checking process from 0 (low) to 100 (high)</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-bar-container">
+                                        <div class="metric-bar" id="fact-check-bar"></div>
+                                        <span class="metric-value" id="fact-check-value">--</span>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">
+                                        <i class="fas fa-exclamation-triangle"></i> Manipulative Language
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">Detects manipulative language from 0 (not manipulative) to 100 (highly manipulative)</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-bar-container">
+                                        <div class="metric-bar" id="manipulative-bar"></div>
+                                        <span class="metric-value" id="manipulative-value">--</span>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">
+                                        <i class="fas fa-globe"></i> Source Reliability
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">Estimates the reliability of mentioned sources from 0 (unreliable) to 100 (highly reliable)</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-bar-container">
+                                        <div class="metric-bar" id="source-bar"></div>
+                                        <span class="metric-value" id="source-value">--</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Insights Card -->
+                    <div class="card ai-insights-card" id="ai-insights-card" style="display: none;">
+                        <div class="card-header">
+                            <h2><i class="fas fa-robot"></i> AI Analysis Insights</h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="ai-insights-container" class="ai-insights-container">
+                                <!-- AI insights will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card sources-card" id="sources-card" style="display: none;">
+                        <div class="card-header">
+                            <h2><i class="fas fa-newspaper"></i> News Source Comparison</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="region-info">
+                                <span class="region-label">Region:</span>
+                                <span class="region-value" id="region-value">--</span>
+                                <span class="confidence-label">Overall Confidence:</span>
+                                <span class="confidence-value" id="overall-confidence">--</span>
+                            </div>
+                            <div class="sources-container" id="sources-container">
+                                <!-- Sources will be added here dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p> 2025 Fake News Detector System | Advanced NLP-powered news verification</p>
+        </footer>
+    </div>
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+        <p>Analyzing news with advanced AI...</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

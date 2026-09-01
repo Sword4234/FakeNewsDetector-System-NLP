@@ -31,12 +31,12 @@
 
 | Home & Input | Credibility Analysis | Timeline & Metrics |
 |---|---|---|
-| ![Home](docs/screenshots/home.png) | ![Analysis](docs/screenshots/analysis.png) | ![Timeline](docs/screenshots/timeline.png) |
+| ![Home](Images/Screenshot%202026-09-01%20210411.png) | ![Analysis](Images/Screenshot 2026-09-01 205142.png) | ![Timeline](Images/Screenshot 2026-09-01 205148.png) |
 | *Dark/blue themed hero + textarea* | *Gauges: Credibility / Truth Probability* | *24h credibility evolution (Plotly, date-axis, spline)* |
 
 | Detailed Metrics | Source Comparison | AI Insights |
 |---|---|---|
-| ![Metrics](docs/screenshots/metrics.png) | ![Sources](docs/screenshots/sources.png) | ![AI Insights](docs/screenshots/insights.png) |
+| ![Metrics](Images/Screenshot 2026-09-01 205156.png) | ![Sources](Images/Screenshot 2026-09-01 205208.png) | ![AI Insights](Images/Screenshot 2026-09-01 220811.png) |
 | *Sentiment, Bias, Fact-check, Manipulative, Source Reliability* | *Region-based 3-article generation (US/UK/EU/Asia)* | *Pattern matches, impossibilities, confidence & conclusion* |
 
 **Demo GIF:**

@@ -29,21 +29,36 @@
 
 ## 📸 Screenshots
 
-| Home & Input | Credibility Analysis | Timeline & Metrics |
-|---|---|---|
-| ![Home](Images/home.png) | ![Analysis](Images/analysis.png) | ![Timeline](Images/timeline.png) |
-| *Home With News Input* | *Gauges: Credibility / Truth Probability* | *24h credibility evolution (Plotly, date-axis, spline)* |
+### Home & Input
+![Home](Images/home.png)  
+*Dark/blue themed hero + textarea*
 
-| Detailed Metrics | Source Comparison | AI Insights |
-|---|---|---|
-| ![Metrics](Images/metrics.png) | ![Sources](Images/sources.png) | ![AI Insights](Images/insights.png) |
-| *Sentiment, Bias, Fact-check, Manipulative, Source Reliability* | *Region-based 3-article generation (US/UK/EU/Asia)* | *Pattern matches, impossibilities, confidence & conclusion* |
+### Credibility Analysis
+![Analysis](Images/analysis.png)  
+*Gauges: Credibility / Truth Probability*
 
-**Demo Working:**
+### Timeline & Metrics
+![Timeline](Images/timeline.png)  
+*24h credibility evolution (Plotly, date-axis, spline)*
+
+### Detailed Metrics
+![Metrics](Images/metrics.png)  
+*Sentiment, Bias, Fact-check, Manipulative, Source Reliability*
+
+### Source Comparison
+![Sources](Images/sources.png)  
+*Region-based 3-article generation (US/UK/EU/Asia)*
+
+### AI Insights
+![AI Insights](Images/insights.png)  
+*Pattern matches, impossibilities, confidence & conclusion*
+
+**Demo GIF:**
 <p align="center">
-  <img src="Images/demo.gif" alt="Demo GIF" width="85%" />
+  <img src="docs/screenshots/demo.gif" alt="Demo GIF" width="85%" />
   <br/><em>Paste → Analyze → Gauges + Timeline + Sources in < 1s</em>
 </p>
+
 
 
 ---

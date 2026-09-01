@@ -1,10 +1,6 @@
 # 🛡️ FakeNewsDetector — System NLP
 
 <p align="center">
-  <img src="docs/screenshots/hero.png" alt="FakeNewsDetector Hero Banner" width="100%" />
-</p>
-
-<p align="center">
   <a href="https://github.com/Sword4234/FakeNewsDetector-System-NLP"><img src="https://img.shields.io/github/stars/Sword4234/FakeNewsDetector-System-NLP?style=social" alt="GitHub stars"/></a>
   <a href="https://github.com/Sword4234/FakeNewsDetector-System-NLP/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"/></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white" alt="Python"/></a>
@@ -32,8 +28,6 @@
 ---
 
 ## 📸 Screenshots
-
-> **Add your images to `docs/screenshots/`** — the README will auto-display them. See [Image Guide](#-adding-images-to-readme) below.
 
 | Home & Input | Credibility Analysis | Timeline & Metrics |
 |---|---|---|
@@ -81,7 +75,6 @@
 
 <p align="center">
   <img src="docs/screenshots/architecture.png" alt="Architecture Diagram" width="90%" />
-  <br/><em>Tip: create a simple diagram with excalidraw/draw.io and save as docs/screenshots/architecture.png</em>
 </p>
 
 ---
@@ -117,7 +110,7 @@ FakeNewsDetector System NLP/
 │   ├── css/style.css      # 1200+ lines, responsive, card animations
 │   └── js/script.js       # Gauges, timeline (date-axis, purge), metrics, sources
 └── docs/
-    └── screenshots/       # ← PUT YOUR IMAGES HERE
+    └── screenshots/
         ├── hero.png
         ├── home.png
         ├── analysis.png
@@ -251,46 +244,6 @@ curl -X POST http://127.0.0.1:5000/api/v1/analyze -H "Content-Type: application/
 
 ---
 
-## 🖼️ Adding Images to README
-
-This README already references images — just drop files in `docs/screenshots/`:
-
-```bash
-docs/screenshots/
-  hero.png        # 1280x420 banner (gradient + logo + tagline)
-  home.png        # Full page screenshot of input section (dark mode)
-  analysis.png    # Gauges + credibility factors
-  timeline.png    # Plotly timeline - MUST be single spline, date X-axis (fixed)
-  metrics.png     # 5 metric bars
-  sources.png     # 3 source cards (credible news)
-  insights.png    # AI insights + conclusion
-  architecture.png# Simple boxes: Input → Flask → RF/TF-IDF → Frontend
-  demo.gif        # Screen record (Analyze click → results scroll)
-```
-
-**How to capture:**
-1. Run `python app.py` → `http://127.0.0.1:5000`
-2. `Try Sample News` → screenshot `analysis.png` + `timeline.png` (now fixed, no double line)
-3. `Try Fake News Sample` → screenshot low-cred warning
-4. Use **ShareX / Snipping Tool / macOS Screenshot** → save as `PNG`, < 500KB (compress with TinyPNG)
-5. GIF: use **ScreenToGif / LICEcap** → `demo.gif` < 5MB
-6. Push:
-```bash
-git add docs/screenshots/*.png docs/screenshots/*.gif
-git commit -m "docs: add screenshots & demo"
-git push
-```
-
-> **No images yet?** README shows broken icons — that's expected until you add files. Add `.gitkeep` keeps folder tracked.
-
-**Quick placeholder generation (PowerShell):**
-```powershell
-# Create placeholder banners if you have no screenshots yet (optional)
-# Just to preview layout — replace with real screenshots later
-```
-
----
-
 ## ✅ Results & Testing
 
 | Input | Credibility | Pattern | Sources |
@@ -340,7 +293,3 @@ PRs welcome! Please:
 **Sword4234 / YashD** — [GitHub](https://github.com/Sword4234)
 
 > Built with ❤️ for media literacy. If this helps your research, please ⭐ star the repo!
-
-<p align="center">
-  <img src="docs/screenshots/footer.png" alt="Footer" width="100%" />
-</p>

@@ -53,7 +53,7 @@
 ![AI Insights](Images/insights.png)  
 *Pattern matches, impossibilities, confidence & conclusion*
 
-**Demo GIF:**
+**Demo WorkFlow:**
 <p align="center">
   <img src="docs/screenshots/demo.gif" alt="Demo GIF" width="85%" />
   <br/><em>Paste → Analyze → Gauges + Timeline + Sources in < 1s</em>

@@ -31,7 +31,7 @@
 
 ### Home & Input
 ![Home](Images/home.png)  
-*Dark/blue themed hero + textarea*
+*Home With News Input Text*
 
 ### Credibility Analysis
 ![Analysis](Images/analysis.png)  

@@ -29,12 +29,10 @@
 
 ## 📸 Screenshots
 
-## 📸 Screenshots
-
 | Home & Input | Credibility Analysis | Timeline & Metrics |
 |---|---|---|
 | ![Home](Images/home.png) | ![Analysis](Images/analysis.png) | ![Timeline](Images/timeline.png) |
-| *Dark/blue themed hero + textarea* | *Gauges: Credibility / Truth Probability* | *24h credibility evolution (Plotly, date-axis, spline)* |
+| *Dark/blue themed her* | *Gauges: Credibility / Truth Probability* | *24h credibility evolution (Plotly, date-axis, spline)* |
 
 | Detailed Metrics | Source Comparison | AI Insights |
 |---|---|---|
@@ -43,7 +41,7 @@
 
 **Demo GIF:**
 <p align="center">
-  <img src="docs/screenshots/demo.gif" alt="Demo GIF" width="85%" />
+  <img src="Images/demo.gif" alt="Demo GIF" width="85%" />
   <br/><em>Paste → Analyze → Gauges + Timeline + Sources in < 1s</em>
 </p>
 
@@ -77,7 +75,7 @@
 ```
 
 <p align="center">
-  <img src="docs/screenshots/architecture.png" alt="Architecture Diagram" width="90%" />
+  <img src="Images/architecture.png" alt="Architecture Diagram" width="90%" />
 </p>
 
 ---
@@ -112,8 +110,8 @@ FakeNewsDetector System NLP/
 ├── static/
 │   ├── css/style.css      # 1200+ lines, responsive, card animations
 │   └── js/script.js       # Gauges, timeline (date-axis, purge), metrics, sources
-└── docs/
-    └── screenshots/
+└── Images/
+    
         ├── hero.png
         ├── home.png
         ├── analysis.png
